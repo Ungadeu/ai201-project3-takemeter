@@ -100,3 +100,24 @@ For real-world integration into a community browser extension or a automated mod
 1. **Overall Accuracy:** $\ge$ 80% on the final test split.
 2. **Per-Class Precision (Citizen Complaints):** $\ge$ 85%. This strict constraint ensures that legitimate fan expressions are rarely misclassified as low-effort rants.
 3. **Confusion Matrix Delineation:** No more than a 10% cross-contamination rate between Code 3 (Tactical) and Code 14 (Romance), proving the structural tie-breaker rules successfully resolved core linguistic overlap during training[cite: 1, 2].
+
+## 7. AI Tool Plan
+
+This project's workflow focuses heavily on data engineering and evaluation rather than raw software development[cite: 2]. Instead of using AI to write code, we will deploy LLMs as investigative partners in three critical phases of the data pipeline:
+
+### 🛠️ Phase A: Label Stress-Testing (Pre-Patrol Inspection)
+Before manually annotating all 200 examples, we will use an LLM (e.g., Gemini or Claude) to deliberately try and break our taxonomy. 
+* **The Method:** We will feed the AI our three label definitions and current tie-breaker rules[cite: 1] and prompt it: *"Generate 10 highly ambiguous r/TheRookie comments that sit exactly on the border between two categories."*
+* **Tightening the Loop:** If the AI produces a boundary post that cannot be instantly classified by our existing rules (e.g., a highly sarcastic comment that blends genuine plot logic with intense character shipping)[cite: 1], it reveals a gap in our system. We will rewrite and tighten our definitions in Section 3 *before* starting the manual dataset build[cite: 1].
+
+### ✍️ Phase B: Annotation Assistance (The Co-Pilot Protocol)
+To accelerate the generation and structure of our 200-example dataset, we will utilize an LLM as a data formatting co-pilot[cite: 1, 2].
+* **The Tool & Workflow:** We will use a frontier model to help draft realistic mock variations of active `r/TheRookie` community discourse based on genuine thread patterns[cite: 1, 2]. 
+* **Tracking & Disclosure:** To ensure absolute algorithmic transparency, our master tracking spreadsheet will include an explicit column metadata flag (`is_ai_assisted`). Every single row generated or formatted with AI assistance will be manually reviewed, audited, and approved by a human annotator to guarantee that the final ground-truth labels perfectly match our established community taxonomy[cite: 1].
+
+### 🔍 Phase C: Failure Analysis (The Post-Incident Review)
+Once the fine-tuning pipeline in `Copy_of_ai201_project3_takemeter_starter_clean.ipynb` is executed[cite: 2], the notebook will output a collection of misclassified test examples[cite: 2]. We will pass this error log directly to an LLM to find the blind spots.
+* **What We'll Look For:** We will instruct the AI to analyze the text of the errors and identify linguistic patterns, such as:
+  * *Keyword Over-reliance:* Is DistilBERT misclassifying posts as rants simply because they contain the word "Bailey"[cite: 1]?
+  * *Linguistic Blends:* Is the model failing on hybrid sentences where a tactical word is used in a shipping context[cite: 1]?
+* **Verification:** We will never take the AI's error analysis at face value. We will cross-verify the patterns it identifies by manually calculating the exact percentage of matching errors in the test set and mapping them against our visual confusion matrix plot (`confusion_matrix.png`)[cite: 2].
