@@ -2,6 +2,8 @@
 
 Welcome to the official repository for **TakeMeter**, a fine-tuned text classification system trained to act as an AI patrol unit on the streets of the `r/TheRookie` subreddit. 
 
+Link: https://www.reddit.com/r/TheRookie/comments/1t3kwk0/the_rookie_s08e18_the_bandit/
+
 The primary goal of TakeMeter is to evaluate the quality of community discourse by automatically filtering public user reactions into distinct categories: logical plot analyses, emotional shipping threads, or repetitive rants.
 
 ---
