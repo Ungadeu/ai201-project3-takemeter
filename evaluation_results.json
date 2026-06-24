@@ -1,0 +1,12 @@
+{
+  "baseline_accuracy": 0.9333,
+  "finetuned_accuracy": 0.8333,
+  "improvement": -0.1,
+  "test_set_size": 30,
+  "label_map": {
+    "Code 3: Tactical Analysis": 0,
+    "Code 14: Relationship Drama": 1,
+    "Citizen Complaint: Low-Effort Rants": 2
+  },
+  "model": "distilbert-base-uncased"
+}
